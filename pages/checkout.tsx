@@ -103,7 +103,9 @@ export default function Checkout() {
     const interval = setInterval(async () => {
       try {
         // Check if there is any transaction for the reference
-        const signatureInfo = await findReference(connection, reference)
+        const signatureInfo = await findReference(connection, reference, {
+          finality: 'confirmed',
+        })
         router.push('/confirmed')
       } catch (e) {
         if (e instanceof FindReferenceError) {
