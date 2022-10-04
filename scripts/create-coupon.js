@@ -21,7 +21,6 @@ const shopPrivateKey = process.env.SHOP_PRIVATE_KEY
 if (!shopPrivateKey) {
   throw new Error('SHOP_PRIVATE_KEY not set')
 }
-console.log('PRIVATE_KEY:', shopPrivateKey)
 const shopAccount = Keypair.fromSecretKey(base58.decode(shopPrivateKey))
 
 // Create the token, returns the token public key
